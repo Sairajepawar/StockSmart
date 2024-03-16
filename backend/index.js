@@ -78,11 +78,12 @@ app.post("/createNote",userMiddleware,async(req,res)=>{
     const { content } = req.body;
     const token = req.headers.authorization;
     const id = JWT.decode(token); //id of current user
-    console.log(id);
+    // console.log(id);
     try {
         const user = await User.findById(id._id);
         const note = new Note({
-            content
+            content,
+            mainUser: id._id
         });
         await note.save();
         user.notes.push(note._id);
@@ -98,6 +99,54 @@ app.post("/createNote",userMiddleware,async(req,res)=>{
         })
     }
 })
+// get list of all the notes saved by the user
+app.get("/listNotes", userMiddleware, async (req, res) => {
+    const token = req.headers.authorization;
+    const { _id } = JWT.decode(token);
+    // console.log(_id);
+    try {
+        const user = await User.findById(_id);
+        const userNotesPromises = user.notes.map(ele => Note.findById(ele));
+        const userNotes = await Promise.all(userNotesPromises);
+        return res.json({
+            notes: userNotes
+        });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({
+            error: "Internal Server Error"
+        });
+    }
+});
+
+// delete note by using it's id
+app.delete("/deleteNote", userMiddleware, async (req, res) => {
+    const { id } = req.body;
+    const token = req.headers.authorization;
+    const { _id } = JWT.decode(token);
+    try {
+        const user = await User.findById(_id);
+        const note = await Note.findByIdAndDelete(id);
+        user.notes = user.notes.filter(ele => ele.toString() !== id); // Filter based on note ID
+        await user.save();
+        if (note) {
+            res.json({
+                message: "Note deleted successfully"
+            });
+        } else {
+            return res.status(404).json({
+                error: "Note not found"
+            });
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({
+            error: "Internal Server Error"
+        });
+    }
+});
+
+
 app.listen(port, () => {
     console.log(`Server is hosted on port number ${port}`)
 })

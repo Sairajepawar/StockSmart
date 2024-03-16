@@ -21,12 +21,16 @@ const userSchema = new Schema({
     name : String,
     email: String,
     password: String,
-    notes: [{ type: Schema.Types.ObjectId, ref: 'Note' }] // Assuming 'Note' is the model name for notes
+    notes: [{ type: Schema.Types.ObjectId, ref: 'Note' }]
 });
 
 
 const noteSchema = new Schema({
     content: String,
+    mainUser: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 })
 
 //create models using defined schema
