@@ -1,9 +1,10 @@
 const express = require('express');
 const JWT = require('jsonwebtoken');
-const {User, connectDB} = require('./db/index.js');
+const {User, Note,connectDB} = require('./db/index.js');
 const {jwtKey} = require('./middleware/verify.js')
 const bcrypt = require('bcryptjs')
 const cors = require('cors')
+const { userMiddleware } = require("./middleware/user.js")
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -72,6 +73,22 @@ app.post("/login", async (req, res) => {
     }
 });
 
+// route to create notes
+app.post("/createNote",userMiddleware,async(req,res)=>{
+    const { content } = req.body;
+    const token = req.headers.authorization;
+    const id = JWT.decode(token); //id of current user
+    const user = User.findById(id);
+    const note = new Note({
+        content
+    });
+    await note.save();
+    user.notes.push(note._id);
+    await user.save();
+    return res.json({
+        message:"Note created successfully"
+    })
+})
 app.listen(port, () => {
     console.log(`Server is hosted on port number ${port}`)
 })

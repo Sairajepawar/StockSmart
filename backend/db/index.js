@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const {Mongoose} = require("mongoose");
 
 const Schema = mongoose.Schema;
 
@@ -19,13 +20,21 @@ const connectDB = async() =>{
 const userSchema = new Schema({
     name : String,
     email: String,
-    password: String
+    password: String,
+    notes: [{ type: Schema.Types.ObjectId, ref: 'Note' }] // Assuming 'Note' is the model name for notes
+});
+
+
+const noteSchema = new Schema({
+    content: String,
 })
 
 //create models using defined schema
 const User = new mongoose.model("User",userSchema);
+const Note = new Mongoose.model("Notes",noteSchema);
 
 module.exports = {
     User,
+    Note,
     connectDB
 }
