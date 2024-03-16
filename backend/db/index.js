@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 // creating a connection to mongodb database
 const connect = async() =>{
     try{
-        const connection = mongoose.connect("mongodb+srv://karanrajeshirke11:DYTelRxnuCKoFFyJ@cluster0.isrremi.mongodb.net/");
+        const connectDB = mongoose.connect("mongodb+srv://karanrajeshirke11:DYTelRxnuCKoFFyJ@cluster0.isrremi.mongodb.net/");
         console.log("Connection established successfully");
     }
     catch{
@@ -15,7 +15,7 @@ const connect = async() =>{
 // Defining the schema
 const userSchema = new Schema({
     name : String,
-    emailId: String,
+    email: String,
     password: String
 })
 
@@ -24,4 +24,5 @@ const User = new mongoose.model("User",userSchema);
 
 module.exports = {
     User,
+    connectDB
 }
