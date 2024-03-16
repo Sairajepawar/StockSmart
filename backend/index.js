@@ -8,10 +8,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // using all required middleware
-app.use(cors);
+app.use(cors());
 app.use(express.json())
 
 // Account creation route for User
