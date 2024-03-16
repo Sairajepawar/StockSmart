@@ -72,6 +72,10 @@ app.post("/login", async (req, res) => {
     }
 });
 
+app.get('/new',(req,res)=>{
+    res.send("Fuck off");
+})
+
 app.listen(port, () => {
     console.log(`Server is hosted on port number ${port}`)
 })
