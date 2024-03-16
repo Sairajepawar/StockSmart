@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./components/Header"
+import Header from "./components/Header";
 import "./App.css";
 function App() {
   return (
@@ -86,37 +86,26 @@ function App() {
                   voluptas ipsam. Expedita sequi voluptatibus earum accusantium
                   quam doloribus! Recusandae saepe quis quidem quam sed
                   temporibus sunt quas odit modi veniam dicta hic, nisi qui
-                  commodi fuga quisquam provident et! Eaque, odit. Modi
-                  consequatur odit sed ea maxime at sint, obcaecati earum,
-                  corrupti in doloremque porro, rerum neque molestias ratione
-                  dolorem hic. Veniam dolorum ut quisquam nisi, alias placeat.
-                  Doloremque id voluptas excepturi quas ratione fugit et. Rem
-                  fugiat, eligendi minus doloribus voluptatibus odio a officia
-                  ex explicabo non quisquam sapiente nemo magnam! Totam nesciunt
-                  velit veniam labore odio. Ad ipsum similique unde sequi. Quos
-                  dolores nam iusto alias suscipit minus ex natus assumenda
-                  officia earum dicta magnam laudantium quis, maxime voluptate
-                  iste repellat ab at ea hic. Qui! Recusandae, necessitatibus
-                  reiciendis hic soluta sunt natus. Assumenda consequatur rem
-                  optio beatae ipsa ullam repudiandae nemo laborum, accusamus,
-                  tempore quas sapiente deserunt asperiores error eos qui,
-                  blanditiis dignissimos magni exercitationem. Necessitatibus
-                  aliquid eaque pariatur iure harum! Nobis in corrupti repellat
-                  id laudantium ea quis soluta maxime illum temporibus libero
-                  qui ab voluptatum est voluptate obcaecati officia, rerum
-                  aliquam earum aspernatur. Reprehenderit eius quisquam mollitia
-                  deserunt dolore fuga natus eum, veritatis nisi, quibusdam
-                  officia. Provident, sequi dolores! Quod deleniti ab
-                  consequatur facilis quae. Beatae asperiores maxime blanditiis
-                  libero culpa eaque ullam. ui impedit sunt a? Corrupti eum
-                  dolores blanditiis itaque consectetur! Cumque eius praesentium
-                  eligendi unde deserunt, atque fugiat? Veniam excepturi minus
-                  velit nesciunt nulla odit dolor saepe deleniti impedit.
-                  Repellat, possimus nulla accusantium quidem consectetur eum
-                  ab. Veniam dicta animi, nisi provident laudantium molestiae et
-                  consequatur cum illo nulla cumque pariatur earum blanditiis
-                  nemo, neque a dolorum mollitia voluptas! Veritatis ullam
-                  architecto pariatur impedit adipisci laborum voluptate?
+                  consequatur rem optio beatae ipsa ullam repudiandae nemo
+                  laborum, accusamus, tempore quas sapiente deserunt asperiores
+                  error eos qui, blanditiis dignissimos magni exercitationem.
+                  Necessitatibus aliquid eaque pariatur iure harum! Nobis in
+                  corrupti repellat id laudantium ea quis soluta maxime illum
+                  temporibus libero qui ab voluptatum est voluptate obcaecati
+                  officia, rerum aliquam earum aspernatur. Reprehenderit eius
+                  quisquam mollitia deserunt dolore fuga natus eum, veritatis
+                  nisi, quibusdam officia. Provident, sequi dolores! Quod
+                  deleniti ab consequatur facilis quae. Beatae asperiores maxime
+                  blanditiis libero culpa eaque ullam. ui impedit sunt a?
+                  Corrupti eum dolores blanditiis itaque consectetur! Cumque
+                  eius praesentium eligendi unde deserunt, atque fugiat? Veniam
+                  excepturi minus velit nesciunt nulla odit dolor saepe deleniti
+                  impedit. Repellat, possimus nulla accusantium quidem
+                  consectetur eum ab. Veniam dicta animi, nisi provident
+                  laudantium molestiae et consequatur cum illo nulla cumque
+                  pariatur earum blanditiis nemo, neque a dolorum mollitia
+                  voluptas! Veritatis ullam architecto pariatur impedit adipisci
+                  laborum voluptate?
                 </p>
               </div>
               <div className="search-bar">

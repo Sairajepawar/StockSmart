@@ -6,8 +6,10 @@ const Schema = mongoose.Schema;
 // creating a connection to mongodb database
 const connectDB = async() =>{
     try{
+
         console.log(process.env.MONGOURL)
         const con = mongoose.connect(process.env.MONGOURL);
+
         console.log("Connection established successfully");
     }
     catch{
