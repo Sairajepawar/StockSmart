@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
+
 
 // creating a connection to mongodb database
 const connectDB = async() =>{
     try{
-        const connectDB = mongoose.connect("mongodb+srv://karanrajeshirke11:DYTelRxnuCKoFFyJ@cluster0.isrremi.mongodb.net/");
+        console.log(process.env.MONGOURL)
+        const con = mongoose.connect(process.env.MONGOURL);
         console.log("Connection established successfully");
     }
     catch{
