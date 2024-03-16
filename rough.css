@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
+    width: 400px; /* Increased width */
+    background-color: #202123;
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .menu {
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+  }
+  
+  .menu-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    background-color: #2f3135;
+  }
+  
+  .main {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #343541;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .assistant-message {
+    background-color: #444654;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .user-input input {
+    width: 100%;
+    padding: 10px;
+    background-color: #40414f;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #a1a1aa;
+  }
+  
+  /* Media queries for responsive sidebar */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .sidebar {
+      width: 100%;
+      max-height: 300px;
+    }
+  
+    .menu {
+      height: auto;
+      max-height: 200px;
+    }
+  }
