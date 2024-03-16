@@ -4,6 +4,8 @@ const {User, connectDB} = require('./db/index.js');
 const {jwtKey} = require('./middleware/verify.js')
 const bcrypt = require('bcryptjs')
 const cors = require('cors')
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
 const port = 3000;
