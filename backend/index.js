@@ -79,16 +79,24 @@ app.post("/createNote",userMiddleware,async(req,res)=>{
     const token = req.headers.authorization;
     const id = JWT.decode(token); //id of current user
     console.log(id);
-    const user = User.findById(id);
-    const note = new Note({
-        content
-    });
-    await note.save();
-    user.notes.push(note._id);
-    await user.save();
-    return res.json({
-        message:"Note created successfully"
-    })
+    try {
+        const user = await User.findById(id._id);
+        const note = new Note({
+            content
+        });
+        await note.save();
+        user.notes.push(note._id);
+        await user.save();
+        return res.json({
+            message: "Note created successfully"
+        })
+    }
+    catch(err){
+        console.log(err);
+        return res.status(500).json({
+            error:"Internal Server Error"
+        })
+    }
 })
 app.listen(port, () => {
     console.log(`Server is hosted on port number ${port}`)
