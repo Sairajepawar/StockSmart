@@ -20,18 +20,14 @@ app.post("/register", async (req, res) => {
             email,
             password
         } = req.body;
-
         // as email id's are unique
         const search = await User.findOne({email: email});
-
         if (search) {
             return res.status(400).json({
                 message: "Account already exist please Login ",
             });
         }
-
         const hashedPassword = await bcrypt.hash(password, 10);
-
         const user = new User({
             name : name,
             email : email,
