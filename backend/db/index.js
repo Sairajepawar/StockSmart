@@ -31,7 +31,7 @@ const noteSchema = new Schema({
 
 //create models using defined schema
 const User = new mongoose.model("User",userSchema);
-const Note = new Mongoose.model("Notes",noteSchema);
+const Note = new mongoose.model("Notes",noteSchema);
 
 module.exports = {
     User,

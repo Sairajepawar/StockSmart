@@ -78,6 +78,7 @@ app.post("/createNote",userMiddleware,async(req,res)=>{
     const { content } = req.body;
     const token = req.headers.authorization;
     const id = JWT.decode(token); //id of current user
+    console.log(id);
     const user = User.findById(id);
     const note = new Note({
         content
