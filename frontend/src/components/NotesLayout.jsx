@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Note from "./Note";
+import { useAuth } from "./Auth";
 
 const NotesLayout = () => {
+  const [auth, setAuth] = useAuth();
   const [notes, setNotes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [notesPerPage] = useState(6); // Number of notes per page
   const [newNoteText, setNewNoteText] = useState("");
 
-  const token = "";
   const config = {
     header: {
-      authorization: token,
+      authorization: auth?.token,
     },
   };
 
@@ -47,7 +48,10 @@ const NotesLayout = () => {
 
   const deleteNote = async (id) => {
     try {
-      await axios.delete(`https://stock-smart.vercel.app/deleteNote/${id}`, config);
+      await axios.delete(
+        `https://stock-smart.vercel.app/deleteNote/${id}`,
+        config
+      );
       setNotes(notes.filter((note) => note.id !== id));
     } catch (error) {
       console.log("Error deleting note:", error);
@@ -63,6 +67,7 @@ const NotesLayout = () => {
 
   return (
     <div className="container mt-4">
+
       <div className="row row-cols-2">
         {currentNotes.map((note) => (
           <div key={note.id} className="col mb-4">

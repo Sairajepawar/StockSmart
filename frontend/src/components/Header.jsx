@@ -51,6 +51,10 @@ const Header = () => {
 
               <Link to="/register"  onClick={handleLogout}>Logout</Link>
             </li>
+            <li className="nav-item m-2">
+
+              <Link to="/notes">Notes</Link>
+            </li>
           </ul>
         </div>
       </div>
