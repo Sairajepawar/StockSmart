@@ -13,7 +13,7 @@ const LoginForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/login",
+        "https://stock-smart.vercel.app/login",
         userInput
       );
       console.log(response);

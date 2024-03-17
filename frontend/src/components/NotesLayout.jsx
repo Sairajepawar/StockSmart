@@ -22,7 +22,7 @@ const NotesLayout = () => {
   const fetchNotes = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/listNotes",
+        "https://stock-smart.vercel.app/listNotes",
         config
       );
       setNotes(response.data.notes);
@@ -34,7 +34,7 @@ const NotesLayout = () => {
   const createNote = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/createNote",
+        "https://stock-smart.vercel.app/createNote",
         { content: newNoteText },
         config
       );
@@ -47,7 +47,7 @@ const NotesLayout = () => {
 
   const deleteNote = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/deleteNote/${id}`, config);
+      await axios.delete(`https://stock-smart.vercel.app/deleteNote/${id}`, config);
       setNotes(notes.filter((note) => note.id !== id));
     } catch (error) {
       console.log("Error deleting note:", error);

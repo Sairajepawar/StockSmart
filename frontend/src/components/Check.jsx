@@ -17,7 +17,7 @@ import { Navigate } from "react-router-dom";
         {
             try
             {
-                const response=await axios.get('http://localhost:3000/auth',{
+                const response=await axios.get('https://stock-smart.vercel.app/auth',{
                     headers:
                     {
                         "Authorization":auth.token

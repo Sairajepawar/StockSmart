@@ -23,7 +23,7 @@ const RegisterForm = () => {
     console.log("re");
     try {
       const response = await axios.post(
-        "http://localhost:3000/register",
+        "https://stock-smart.vercel.app/register",
         userInput
       );
       console.log(response);
