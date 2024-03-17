@@ -16,18 +16,25 @@ const Header = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item m-2">
-          <link to="/" />Login
+          <link to="/"/>
+          Login
         </li>
         <li className="nav-item m-2">
-          <link to="/protected/home" />Home
+          <link to="/protected/home"/>
+          Home
         </li>
         <li className="nav-item m-2">
-          <link to="/register" />Register
+          <link to="/register"/>
+          Register
+        </li>
+        <li className="nav-item m-2">
+          <link to="/Notes/"/>
+          Notes
         </li>
       </ul>
     </div>
   </div>
-</nav>
+    </nav>
 
   );
 };
