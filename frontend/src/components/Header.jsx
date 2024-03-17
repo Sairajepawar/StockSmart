@@ -3,6 +3,7 @@ import { useAuth } from "./Auth";
 const Header = () => {
 
 
+
   const [auth,setAuth]=useAuth()
   function handleLogout() {
     setAuth((prevAuth) => {
