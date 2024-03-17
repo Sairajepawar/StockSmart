@@ -89,7 +89,7 @@ app.post("/createNote",userMiddleware,async(req,res)=>{
         user.notes.push(note._id);
         await user.save();
         return res.json({
-            message: "Note created successfully"
+            note: note,
         })
     }
     catch(err){
@@ -120,8 +120,8 @@ app.get("/listNotes", userMiddleware, async (req, res) => {
 });
 
 // delete note by using it's id
-app.delete("/deleteNote", userMiddleware, async (req, res) => {
-    const { id } = req.body;
+app.delete("/deleteNote/:id", userMiddleware, async (req, res) => {
+    const { id } = req.params;
     const token = req.headers.authorization;
     const { _id } = JWT.decode(token);
     try {

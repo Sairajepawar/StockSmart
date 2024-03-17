@@ -61,8 +61,8 @@ const Header=()=>
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
-                  Disabled
+                <a className="nav-link" href="#">
+                  Notes
                 </a>
               </li>
             </ul>

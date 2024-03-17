@@ -8,14 +8,21 @@ const NotesLayout = () => {
     const [notesPerPage] = useState(6); // Number of notes per page
     const [newNoteText, setNewNoteText] = useState('');
 
+    const token = '';
+    const config = {
+        header:{
+            authorization: token
+        }
+    }
+
     useEffect(() => {
         fetchNotes();
     }, []);
 
     const fetchNotes = async () => {
         try {
-            const response = await axios.get('backend_api_url');
-            setNotes(response.data);
+            const response = await axios.get('http://localhost:3000/listNotes',config);
+            setNotes(response.data.notes);
         } catch (error) {
             console.error('Error fetching notes:', error);
         }
@@ -23,8 +30,8 @@ const NotesLayout = () => {
 
     const createNote = async () => {
         try {
-            const response = await axios.post('backend_api_url', { text: newNoteText });
-            setNotes([...notes, response.data]);
+            const response = await axios.post('http://localhost:3000/createNote', { content: newNoteText },config);
+            setNotes([...notes, response.data.note]);
             setNewNoteText('');
         } catch (error) {
             console.error('Error creating note:', error);
@@ -33,7 +40,7 @@ const NotesLayout = () => {
 
     const deleteNote = async (id) => {
         try {
-            await axios.delete(`backend_api_url/${id}`);
+            await axios.delete(`http://localhost:3000/deleteNote/${id}`,config);
             setNotes(notes.filter((note) => note.id !== id));
         } catch (error) {
             console.error('Error deleting note:', error);
