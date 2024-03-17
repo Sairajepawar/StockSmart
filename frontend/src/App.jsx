@@ -8,6 +8,7 @@ import LoginForm from "./components/LoginForm.jsx";
 import RegisterForm from "./components/RegisterForm.jsx";
 import { Check } from "./components/Check.jsx";
 import { AuthProvider } from "./components/Auth.jsx";
+import NotesLayout from "./components/NotesLayout.jsx";
 function App() {
   return (
     <>
@@ -18,6 +19,8 @@ function App() {
           <Routes>
             <Route path="/" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
+            <Route path="/note" element={<NotesLayout />} />
+            <Route path="/notes" element={<NotesLayout />} />
 
             <Route path="/protected" element={<Check />}>
               <Route path="home" element={<MainUI />} />
