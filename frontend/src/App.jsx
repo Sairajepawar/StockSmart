@@ -37,12 +37,16 @@ function App() {
                 <div className="menu-item">
                   Checkout with Braintree Integration
                 </div>
+                <div className={"infostone"}>
+                  <h4>About Project</h4>
+                  <a>This is one stop solution for stock related information, for top tech companies</a>
+                </div>
               </div>
             </div>
           </div>
           <div className="col-9 side-bigger">
             <div className="main">
-              <div className="content">
+            <div className="content">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Aspernatur neque sapiente ex est dicta cupiditate minima quod
