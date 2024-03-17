@@ -16,6 +16,14 @@ app.use(cors());
 app.use(express.json())
 
 // Account creation route for User
+
+
+app.get('/auth',userMiddleware,(req,res)=>
+{
+    res.status(200).send({ok:true})
+})
+
+
 app.post("/register", async (req, res) => {
     try {
         const {
