@@ -33,7 +33,7 @@ const NotesLayout = () => {
 
     const deleteNote = async (id) => {
         try {
-            await axios.delete(`your_backend_api_url/${id}`);
+            await axios.delete(`backend_api_url/${id}`);
             setNotes(notes.filter((note) => note.id !== id));
         } catch (error) {
             console.error('Error deleting note:', error);
