@@ -4,7 +4,7 @@ const Note = ({ note, onDelete }) => {
     return (
         <div className="card sticky-note">
             <div className="card-body">
-                <p className="card-text">{note.text}</p>
+                <p className="card-text">{note.content}</p>
                 <button className="btn btn-danger" onClick={() => onDelete(note.id)}>Delete</button>
             </div>
         </div>

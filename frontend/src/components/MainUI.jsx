@@ -110,7 +110,7 @@ const MainUI=()=>
               className="search-input"
             />
             <button className="search-button">
-              <i class="fa fa-search" aria-hidden="true"></i>
+              <i className="fa fa-search" aria-hidden="true"></i>
             </button>
           </div>
         </div>
